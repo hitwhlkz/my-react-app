@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ProductsTable = ({ products, onRowClick }) => {
+const ProductsTable =React.memo(({ products, onRowClick }) => {
   const renderStars = (rate) => {
     const starUrl = 'https://geelao-oss.oss-cn-hangzhou.aliyuncs.com/db/202203301749709.svg';
     const roundedRate = Math.round(rate);
@@ -40,7 +40,7 @@ const ProductsTable = ({ products, onRowClick }) => {
       </tbody>
     </table>
   );
-};
+});
 
 ProductsTable.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({
